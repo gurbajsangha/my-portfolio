@@ -1,19 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gurbaj Singh | Portfolio</title>
     <style>
-        body { background: #0f172a; color: white; font-family: sans-serif; display: flex; height: 100vh; align-items: center; justify-content: center; text-align: center; }
-        h1 { border-right: 2px solid; width: 100%; white-space: nowrap; overflow: hidden; animation: typing 2s, cursor .4s step-end infinite; }
-        @keyframes typing { from { width: 0 } }
-        @keyframes cursor { 50% { border-color: transparent } }
+        :root { --bg: #0f172a; --text: #f8fafc; --accent: #38bdf8; }
+        body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; margin: 0; }
+        
+        nav { display: flex; justify-content: space-between; padding: 1.5rem 5%; background: rgba(15, 23, 42, 0.9); position: sticky; top: 0; border-bottom: 1px solid #1e293b; }
+        .logo { font-weight: bold; font-size: 1.2rem; color: var(--accent); }
+        .nav-links a { color: var(--text); text-decoration: none; margin-left: 20px; font-size: 0.9rem; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--accent); }
+
+        .hero { height: 80vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0 10%; }
+        h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .subtitle { font-size: 1.2rem; color: #94a3b8; max-width: 600px; }
+        
+        .section-preview { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 5% 10%; }
+        .card { border: 1px solid #1e293b; padding: 20px; border-radius: 8px; transition: transform 0.3s; cursor: pointer; }
+        .card:hover { transform: translateY(-5px); border-color: var(--accent); }
     </style>
 </head>
 <body>
-    <div>
-        <h1>Gurbaj Singh: Operations Manager & Developer</h1>
-        <p>Cybersecurity Lab | Photography Gallery | Personal Journal</p>
-        <p>Coming Soon...</p>
+
+    <nav>
+        <div class="logo">GURBAJ SINGH</div>
+        <div class="nav-links">
+            <a href="#lab">The Lab</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#journal">Journal</a>
+            <a href="/vault">The Vault</a>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h1>Building at the intersection of <span style="color: var(--accent);">IT & Creativity.</span></h1>
+        <p class="subtitle">Operations Manager by day, Cybersecurity student and Cinematic Photographer by night.</p>
     </div>
+
+    <div class="section-preview">
+        <div class="card">
+            <h3>The Lab</h3>
+            <p>AI projects, Network+ notes, and Python scripts.</p>
+        </div>
+        <div class="card">
+            <h3>The Lens</h3>
+            <p>Cinematic portraiture and visual storytelling.</p>
+        </div>
+        <div class="card">
+            <h3>The Library</h3>
+            <p>A collection of my thoughts, writings, and personal journal.</p>
+        </div>
+    </div>
+
 </body>
 </html>
