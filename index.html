@@ -3,62 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gurbaj Singh | Portfolio</title>
+    <title>Gurbaj Singh | Digital Garden</title>
     <style>
-        :root { --bg: #0f172a; --text: #f8fafc; --accent: #38bdf8; }
-        body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; margin: 0; }
-        
-        nav { display: flex; justify-content: space-between; padding: 1.5rem 5%; background: rgba(15, 23, 42, 0.9); position: sticky; top: 0; border-bottom: 1px solid #1e293b; }
-        .logo { font-weight: bold; font-size: 1.2rem; color: var(--accent); }
-        .nav-links a { color: var(--text); text-decoration: none; margin-left: 20px; font-size: 0.9rem; transition: color 0.3s; }
-        .nav-links a:hover { color: var(--accent); }
+        :root {
+            --bg: #ffffff;
+            --sidebar-bg: #f5f5f7;
+            --text: #1d1d1f;
+            --accent: #0071e3;
+            --border: #d2d2d7;
+        }
 
-        .hero { height: 80vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0 10%; }
-        h1 { font-size: 3rem; margin-bottom: 1rem; }
-        .subtitle { font-size: 1.2rem; color: #94a3b8; max-width: 600px; }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            display: flex;
+        }
+
+        /* Sidebar - The "Garden Index" */
+        nav {
+            width: 280px;
+            height: 100vh;
+            background: var(--sidebar-bg);
+            border-right: 1px solid var(--border);
+            position: fixed;
+            padding: 40px 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+
+        .nav-header { font-weight: 700; font-size: 1.1rem; margin-bottom: 30px; letter-spacing: -0.5px; }
         
-        .section-preview { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 5% 10%; }
-        .card { border: 1px solid #1e293b; padding: 20px; border-radius: 8px; transition: transform 0.3s; cursor: pointer; }
-        .card:hover { transform: translateY(-5px); border-color: var(--accent); }
+        .nav-group { margin-bottom: 25px; }
+        .nav-group-title { font-size: 0.75rem; color: #86868b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+        
+        .nav-link { 
+            display: block; 
+            text-decoration: none; 
+            color: var(--text); 
+            padding: 8px 0; 
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+        .nav-link:hover { color: var(--accent); }
+
+        /* Main Content Area */
+        main {
+            margin-left: 280px;
+            padding: 80px 10%;
+            max-width: 800px;
+            line-height: 1.6;
+        }
+
+        h1 { font-size: 2.5rem; letter-spacing: -1px; margin-bottom: 10px; }
+        .status-tag { display: inline-block; background: #e8f3ff; color: var(--accent); padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; margin-bottom: 30px; }
+
+        .garden-section { margin-top: 50px; }
+        .garden-section h2 { font-size: 1.2rem; border-bottom: 1px solid var(--border); padding-bottom: 10px; margin-bottom: 20px; }
+
+        .entry-card {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            transition: background 0.2s;
+            cursor: pointer;
+        }
+        .entry-card:hover { background: var(--sidebar-bg); }
+        .entry-card h3 { margin: 0 0 5px 0; font-size: 1.1rem; color: var(--accent); }
+        .entry-card p { margin: 0; color: #424245; font-size: 0.9rem; }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            body { flex-direction: column; }
+            nav { width: 100%; height: auto; position: relative; border-right: none; border-bottom: 1px solid var(--border); }
+            main { margin-left: 0; padding: 40px 5%; }
+        }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">GURBAJ SINGH</div>
-        <div class="nav-links">
-            <a href="#lab">The Lab</a>
-            <a href="#gallery">Gallery</a>
-            <a href="#journal">Journal</a>
-            <a href="/vault">The Vault</a>
+        <div class="nav-header">Gurbaj Singh</div>
+        
+        <div class="nav-group">
+            <div class="nav-group-title">The Explorer</div>
+            <a href="#about" class="nav-link">Welcome</a>
+            <a href="#lab" class="nav-link">Technical Lab</a>
+            <a href="#gallery" class="nav-link">Cinematic Gallery</a>
+            <a href="#journal" class="nav-link">Mind Garden</a>
+        </div>
+
+        <div class="nav-group">
+            <div class="nav-group-title">Projects</div>
+            <a href="#" class="nav-link">Facility Manager</a>
+            <a href="#" class="nav-link">AI Experiments</a>
+            <a href="#" class="nav-link">Network+ Progress</a>
+        </div>
+
+        <div class="nav-group">
+            <div class="nav-group-title">Contact</div>
+            <a href="mailto:gurbaj@gurbajsangha.com" class="nav-link">Email Me</a>
         </div>
     </nav>
 
-    <div class="hero">
-        <h1>Building at the intersection of <span style="color: var(--accent);">IT & Creativity.</span></h1>
-        <p class="subtitle">Operations Manager by day, Cybersecurity student and Cinematic Photographer by night.</p>
-    </div>
+    <main>
+        <div class="status-tag">Currently Building: IT Portfolio & Photography Gallery</div>
+        <h1>Hello, I'm Gurbaj.</h1>
+        <p>I am an Operations Manager navigating the world of Cybersecurity and Web Development. This site is my <strong>Digital Garden</strong>—a place where I share my evolving notes, technical projects, and cinematic photography.</p>
 
-    <div class="section-preview">
-        <div class="card">
-            <h3>The Lab</h3>
-            <p>AI projects, Network+ notes, and Python scripts.</p>
-        </div>
-        <div class="card">
-            <h3>The Lens</h3>
-            <p>Cinematic portraiture and visual storytelling.</p>
-        </div>
-        <div class="card">
-            <h3>The Library</h3>
-            <p>A collection of my thoughts, writings, and personal journal.</p>
-        </div>
-    </div>
-<section id="contact" style="padding: 10% 10%; text-align: center; border-top: 1px solid #1e293b;">
-    <h2>Get in Touch</h2>
-    <p style="color: #94a3b8;">Whether it's a technical collaboration or a photography project, I'd love to hear from you.</p>
-    <a href="mailto:gurbaj@gurbajsangha.com" style="display: inline-block; padding: 12px 24px; background: #38bdf8; color: #0f172a; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 20px;">
-        Send an Email
-    </a>
-</section>
+        <section id="lab" class="garden-section">
+            <h2>Technical Lab</h2>
+            <div class="entry-card">
+                <h3>Departmental Operations System</h3>
+                <p>A solo software project built to manage facility workflows. Built with Python and SQL.</p>
+            </div>
+            <div class="entry-card">
+                <h3>Security & Networking</h3>
+                <p>Notes and labs from my journey toward CompTIA Network+ and Security Operations.</p>
+            </div>
+        </section>
+
+        <section id="gallery" class="garden-section">
+            <h2>The Lens</h2>
+            <p>Visual storytelling through professional portraiture and cinematic editing. (Gallery loading soon...)</p>
+        </section>
+
+        <section id="journal" class="garden-section">
+            <h2>Latest Thoughts</h2>
+            <div class="entry-card">
+                <h3>Why Digital Gardens?</h3>
+                <p>Thinking about the shift from static portfolios to living knowledge bases.</p>
+            </div>
+        </section>
+    </main>
+
 </body>
 </html>
