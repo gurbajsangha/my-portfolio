@@ -1,7 +1,7 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "gurbaj-singh-portfolio",
-  "compatibility_date": "2025-01-01",
+  "name": "gurbaj singh portfolio",
+  "compatibility_date": "2026-08-17",
   "observability": {
     "enabled": true
   },
